@@ -1,0 +1,3 @@
+{"sessionId":"460cc7","location":"employee.controller.js:sendInvite","message":"sendInvite controller hit","data":{"employeeId":"6a33c3957b5f99e80661ebe4","tenantId":"6a2a4c1406b5fa7fc8b3b1a5"},"timestamp":1781777302519,"hypothesisId":"E","runId":"pre-fix"}
+{"sessionId":"460cc7","location":"employee.service.js:sendInviteService","message":"sendInviteService entry","data":{"employeeId":"6a33c3957b5f99e80661ebe4","tenantId":"6a2a4c1406b5fa7fc8b3b1a5"},"timestamp":1781777302533,"hypothesisId":"C","runId":"pre-fix"}
+{"sessionId":"460cc7","location":"employee.service.js:sendInviteService","message":"sendInviteService email result","data":{"employeeId":"6a33c3957b5f99e80661ebe4","emailSent":true},"timestamp":1781777309335,"hypothesisId":"C","runId":"pre-fix"}

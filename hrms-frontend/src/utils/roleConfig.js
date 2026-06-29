@@ -1,0 +1,92 @@
+export const SIDEBAR_MENU = [
+  {
+    label: 'Dashboard',
+    path: '/dashboard',
+    iconName: 'LayoutDashboard',
+    roles: ['employee', 'manager', 'hr_admin', 'leadership'],
+  },
+  {
+    label: 'Employees',
+    path: '/employees',
+    iconName: 'Users',
+    roles: ['hr_admin', 'manager'],
+  },
+  {
+    label: 'Directory',
+    path: '/employees/directory',
+    iconName: 'BookUser',
+    roles: ['employee', 'manager', 'hr_admin', 'leadership'],
+  },
+  {
+    label: 'Organization',
+    path: '/org/departments',
+    iconName: 'Building2',
+    roles: ['hr_admin'],
+  },
+  {
+    label: 'Attendance',
+    path: '/attendance',
+    iconName: 'Clock',
+    roles: ['employee', 'manager', 'hr_admin', 'leadership'],
+  },
+  {
+    label: 'Team Attendance',
+    path: '/attendance/team',
+    iconName: 'UsersRound',
+    roles: ['manager', 'hr_admin'],
+  },
+  {
+    label: 'Regularization',
+    path: '/attendance/regularization',
+    iconName: 'FileCheck',
+    roles: ['manager', 'hr_admin'],
+  },
+  {
+    label: 'My Leave',
+    path: '/leave',
+    iconName: 'CalendarDays',
+    roles: ['employee', 'manager', 'hr_admin', 'leadership'],
+  },
+  {
+    label: 'Apply Leave',
+    path: '/leave/apply',
+    iconName: 'CalendarPlus',
+    roles: ['employee', 'manager', 'hr_admin', 'leadership'],
+  },
+  {
+    label: 'Leave Approvals',
+    path: '/leave/approvals',
+    iconName: 'CheckCircle',
+    roles: ['hr_admin', 'manager'],
+  },
+  {
+    label: 'Team Calendar',
+    path: '/leave/calendar',
+    iconName: 'CalendarRange',
+    roles: ['hr_admin', 'manager'],
+  },
+  {
+    label: 'Reports',
+    path: '/reports',
+    iconName: 'BarChart2',
+    roles: ['hr_admin', 'leadership'],
+  },
+  {
+    label: 'Notifications',
+    path: '/notifications',
+    iconName: 'Bell',
+    roles: ['employee', 'manager', 'hr_admin', 'leadership'],
+  },
+  {
+    label: 'Settings',
+    path: '/settings',
+    iconName: 'Settings2',
+    roles: ['hr_admin'],
+  },
+  {
+    label: 'Change Password',
+    path: '/settings/password',
+    iconName: 'KeyRound',
+    roles: ['employee', 'manager', 'hr_admin', 'leadership'],
+  },
+];
