@@ -1,51 +1,40 @@
-import "./src/config/env.js"
-import Employee from "./src/models/Employee.model.js"
-import User from "./src/models/User.model.js"
-import dotenv from "dotenv"
-dotenv.config()
+import dotenv from "dotenv";
+dotenv.config();
 
-import connectDB from "./src/config/db.js"
-import app from "./src/app.js"
+import "./src/config/env.js";
+import Employee from "./src/models/Employee.model.js";
+import User from "./src/models/User.model.js";
 
-const PORT = process.env.PORT || 5000
+import cors from "cors";
+import connectDB from "./src/config/db.js";
+import app from "./src/app.js";
 
-connectDB().then(() => {
-    app.listen(PORT, () => {
-        console.log(`Server running on port ${PORT}`)
+const PORT = process.env.PORT || 5000;
+
+app.use(
+    cors({
+        origin: [
+            "http://localhost:5173",
+            "https://hrms-fullstack-project.onrender.com",
+        ],
+        credentials: true,
     })
-})
+);
 
+app.get("/", (req, res) => {
+    res.status(200).json({
+        success: true,
+        message: "HRMS API Running 🚀",
+    });
+});
 
-
-
-
-app.get("/create-leadership", async (req, res) => {
-    const user = await User.create({
-        tenantId: "6a2a4c1406b5fa7fc8b3b1a5",
-        name: "Leadership User",
-        email: "leadership@techcorp.com",
-        password: "Leader@1234",
-        role: "leadership",
-        isEmailVerified: true,
-        isActive: true
+connectDB()
+    .then(() => {
+        app.listen(PORT, () => {
+            console.log(`Server running on port ${PORT}`);
+        });
     })
-
-    const employee = await Employee.create({
-        tenantId: "6a2a4c1406b5fa7fc8b3b1a5",
-        employeeCode: "EMP0011",
-        firstName: "Leadership",
-        lastName: "User",
-        officialEmail: "leadership@techcorp.com",
-        phone: "9000000002",
-        dateOfJoining: new Date("2026-01-01"),
-        employmentType: "full_time",
-        gender: "male",
-        status: "active",
-        shiftId: "6a32659bd0db79ad1094a57e",
-        userId: user._id
-    })
-
-    await User.findByIdAndUpdate(user._id, { employeeId: employee._id })
-
-    res.json({ user: user.email, employee: employee.employeeCode, userId: user._id, employeeId: employee._id })
-})
+    .catch((err) => {
+        console.error("Database connection failed:", err);
+        process.exit(1);
+    });
